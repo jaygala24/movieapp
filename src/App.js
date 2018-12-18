@@ -18,7 +18,7 @@ class App extends Component {
     e.preventDefault();
     const movie = e.target.elements.movie.value;
     const res = await axios.get(
-      `http://www.omdbapi.com/?s=${movie}&apikey=3273255d`
+      `https://www.omdbapi.com/?s=${movie}&apikey=3273255d`
     );
     if (res['data']['Response'] === 'True') {
       const movies = res['data']['Search'];
@@ -32,7 +32,7 @@ class App extends Component {
   async getMovie(e) {
     const movieID = localStorage.getItem('id');
     const res = await axios.get(
-      `http://www.omdbapi.com/?i=${movieID}&apikey=3273255d`
+      `https://www.omdbapi.com/?i=${movieID}&apikey=3273255d`
     );
     const data = {
       data: res.data
