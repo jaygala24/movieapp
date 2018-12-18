@@ -3,6 +3,7 @@ import React from 'react';
 const MovieDetail = props => {
   let movie = props.movie;
   let url = 'http://www.imdb.com/title/' + movie.imdbID;
+  let homepage = 'https://jaygala24.github.io/movieapp/';
   return (
     <div className="container text-white text-center">
       <h2>{movie.Title}</h2>
@@ -44,7 +45,7 @@ const MovieDetail = props => {
           <a href={url} className="btn btn-primary mr-3">
             View IMDB
           </a>
-          <a href="/" className="btn btn-primary">
+          <a href={homepage} className="btn btn-primary">
             Go Back
           </a>
         </div>
