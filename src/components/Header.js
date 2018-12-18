@@ -10,7 +10,7 @@ const Header = (props) => {
     return (
         <React.Fragment>
             <nav className="navbar navbar-dark justify-content-center">
-                <a href="/" className="navbar-brand"><p className="display-4">{ branding }</p></a>
+                <a href="https://jaygala24.github.io/movieapp" className="navbar-brand"><p className="display-4">{ branding }</p></a>
             </nav>
         </React.Fragment>
     )
