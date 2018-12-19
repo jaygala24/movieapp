@@ -17,15 +17,23 @@ class App extends Component {
   async getMovies(e) {
     e.preventDefault();
     const movie = e.target.elements.movie.value;
+    const { errors } = this.state;
     const res = await axios.get(
       `https://www.omdbapi.com/?s=${movie}&apikey=3273255d`
     );
     if (res['data']['Response'] === 'True') {
       const movies = res['data']['Search'];
-      this.setState({ movies: movies });
+      if (errors) {
+        this.setState({ movies: movies, errors: !errors });
+      } else {
+        this.setState({ movies: movies });
+      }
     } else {
-      const { errors } = this.state;
-      this.setState({ errors: !errors });
+      if (errors) {
+        this.setState({ movies: [] });
+      } else {
+        this.setState({ movies: [], errors: !errors });
+      }
     }
   }
 
