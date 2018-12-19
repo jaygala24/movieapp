@@ -8,7 +8,6 @@ class Search extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log('Success');
     this.props.getMovies(e);
     this.setState({ searchMovie: e.target.elements.movie.value });
   };
